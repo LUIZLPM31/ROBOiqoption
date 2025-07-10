@@ -11,8 +11,8 @@ def check_signal(df):
     # O nome da coluna das bandas mudará por causa da alteração no 'indicators.py'
     df_with_indicators = calculate_indicators(df.copy())
     
-    bb_lower_col = 'BBL_20_2.0' # Nome da coluna atualizado para std 2.0
-    bb_upper_col = 'BBU_20_2.0' # Nome da coluna atualizado para std 2.0
+    bb_lower_col = 'BBL_20_2.0' 
+    bb_upper_col = 'BBU_20_2.0' 
     rsi_col = 'RSI_4'
 
     if not all([bb_lower_col in df_with_indicators.columns, bb_upper_col in df_with_indicators.columns, rsi_col in df_with_indicators.columns]):
@@ -31,17 +31,16 @@ def check_signal(df):
 
     signal = None
     
-    # --- MUDANÇA APLICADA ---
     # Condição de Compra (CALL) com RSI < 30
     is_below_band = open_price_current < bb_lower_current
-    is_oversold = rsi_previous < 30 # Alterado de 20 para 30
+    is_oversold = rsi_previous < 30 
     if is_below_band and is_oversold:
         signal = "CALL"
         logging.warning(f"SINAL DE COMPRA (CALL) DETECTADO! Abertura < B.Inf ({is_below_band}) E RSI < 30 ({is_oversold})")
 
     # Condição de Venda (PUT) com RSI > 70
     is_above_band = open_price_current > bb_upper_current
-    is_overbought = rsi_previous > 70 # Alterado de 80 para 70
+    is_overbought = rsi_previous > 70 
     if is_above_band and is_overbought:
         signal = "PUT"
         logging.warning(f"SINAL DE VENDA (PUT) DETECTADO! Abertura > B.Sup ({is_above_band}) E RSI > 70 ({is_overbought})")
