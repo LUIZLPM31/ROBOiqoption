@@ -9,8 +9,8 @@ from risk_management import RiskManagement
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # --- Configurações do Robô --- #
-EMAIL = "luizpaulomoura@icloud.com"
-PASSWORD = "Noah2806@"
+EMAIL = ""
+PASSWORD = ""
 
 # Apenas liste os nomes base dos pares que você tem interesse.
 PREFERRED_ASSETS = ["EURUSD", "EURJPY", "GBPUSD", "AUDCAD", "USDCAD", "BTCUSD"]
