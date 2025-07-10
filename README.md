@@ -86,7 +86,7 @@ DAILY_TAKE_PROFIT_PERCENTAGE = 10.0 # Percentual de ganho diário para parar (ex
 Para iniciar o robô, execute o script `main_robot.py` a partir do seu terminal:
 
 ```bash
-python3 main_robot.py
+python main_robot.py
 ```
 
 O robô começará a monitorar o mercado, calcular os indicadores e executar ordens de acordo com a estratégia e as regras de gerenciamento de risco definidas.
